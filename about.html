@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Blinkdrop</title>
+    <meta name="description"
+        content="The story behind Blinkdrop — India's smart home automation company built for affordability, security, and ease of use.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="visitor.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 50%, #06b6d4 100%);
+            padding: 8rem 8% 6rem;
+            text-align: center;
+            color: white;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .about-section {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .about-section h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            font-size: 0.97rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-xl);
+            padding: 1.8rem;
+            text-align: center;
+        }
+
+        .value-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .value-card h3 {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .team-card h3 {
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-card span {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">BLINK<span>DROP</span></a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html#products">Products</a>
+            <a href="index.html#features">Features</a>
+            <a href="about.html">About</a>
+            <a href="https://smart-home-lovat.vercel.app/" class="btn-portal">
+                <i class="fa-solid fa-gauge-high"></i> Customer Portal
+            </a>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="about-hero">
+        <h1>Making Smart Homes Accessible to Every Indian</h1>
+        <p>We started Blinkdrop because we believed home automation shouldn't cost a fortune or require an electrician's
+            degree — it should just work.</p>
+    </div>
+
+    <main class="about-section">
+        <h2>Our Story</h2>
+        <p>Blinkdrop was born out of a simple frustration: existing smart home systems were either too expensive, too
+            complex, or simply not designed with Indian homes in mind. Our founder, an engineer who'd retrofitted his
+            own apartment with open-source smart switches, realized he could do this for everyone.</p>
+        <p>In 2024, we set out to build a smart home ecosystem that fits the reality of Indian electrical infrastructure
+            — existing switchboards, variable power supply, diverse home layouts — without demanding any rewiring or
+            professional setup. The result is Blinkdrop.</p>
+        <p>Today, we serve thousands of homes across India, from compact Mumbai apartments to sprawling Bengaluru
+            villas. Our devices connect seamlessly with Google Home, operate locally over MQTT without needing the
+            cloud, and are engineered with the kind of security that protects your home data the way a physical lock
+            protects your front door.</p>
+
+        <h2>Our Mission</h2>
+        <p>To make intelligent home automation affordable, secure, and effortless for every Indian household — so the
+            future of living isn't a luxury, it's the standard.</p>
+
+        <h2>Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Security First</h3>
+                <p>Every component is built with encryption, JWT auth, and local-first MQTT so your home data stays
+                    yours.</p>
+            </div>
+            <div class="value-card">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <h3>Affordability</h3>
+                <p>Smart home tech shouldn't be a premium. We price to make automation accessible across all income
+                    brackets.</p>
+            </div>
+            <div class="value-card">
+                <i class="fa-solid fa-plug"></i>
+                <h3>Simplicity</h3>
+                <p>If it takes more than 15 minutes to set up, we've failed. Our products are plug-and-play by design.
+                </p>
+            </div>
+            <div class="value-card">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Sustainability</h3>
+                <p>Real-time energy monitoring and smart automation reduce household power consumption by up to 40%.</p>
+            </div>
+        </div>
+
+        <h2>Our Technology</h2>
+        <p>Under the hood, Blinkdrop runs on a stack built for reliability and speed. Our backend API is built with
+            Node.js and Express, backed by MongoDB, and deployed on Render. The frontend dashboard is hosted on Vercel
+            for global CDN performance. Devices communicate in real time via the MQTT protocol — the same standard used
+            in industrial IoT systems worldwide.</p>
+        <p>Google Home integration is powered by the Google Smart Home Actions framework, with state reports sent
+            asynchronously to minimize latency. Our JWT-based authentication includes token versioning, enabling instant
+            remote logout across all devices — a feature rarely seen in consumer home automation products.</p>
+
+        <h2>Get in Touch</h2>
+        <p>Have questions, partnership proposals, or bulk/enterprise inquiries? We'd love to hear from you.</p>
+        <p>
+            <i class="fa-solid fa-envelope" style="color:var(--primary); margin-right:0.5rem;"></i>
+            <a href="mailto:hello@blinkdrop.in" style="color:var(--primary);">hello@blinkdrop.in</a>
+        </p>
+        <p>
+            <i class="fa-solid fa-location-dot" style="color:var(--primary); margin-right:0.5rem;"></i>
+            Bengaluru, Karnataka, India — 560001
+        </p>
+    </main>
+
+    <section class="cta-banner">
+        <h2>Start Your Smart Home Journey</h2>
+        <p>Explore our products or log in to your existing dashboard.</p>
+        <a href="index.html#products" class="btn-white">
+            <i class="fa-solid fa-shop"></i> View Products
+        </a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom" style="border-top:none; padding-top:2rem;">
+            <span>&copy; 2026 Blinkdrop Technologies Pvt. Ltd.</span>
+            <div style="display:flex; gap:1.2rem;">
+                <a href="index.html">Home</a>
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+
+</html>

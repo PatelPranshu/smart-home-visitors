@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinkdrop — The Future of Smart Living</title>
+    <meta name="description"
+        content="Blinkdrop brings military-grade smart home automation to every home. Energy monitoring, voice control, and seamless app integration — starting at an affordable price.">
+    <meta name="keywords" content="smart home, home automation, Blinkdrop, IoT, smart switch, energy monitoring">
+    <meta name="author" content="Blinkdrop Technologies">
+    <meta property="og:title" content="Blinkdrop — The Future of Smart Living">
+    <meta property="og:description" content="Affordable, secure, and seamless smart home automation for everyone.">
+    <meta property="og:type" content="website">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="visitor.css">
+</head>
+
+<body>
+
+    <!-- ══════════ NAVBAR ══════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">BLINK<span>DROP</span></a>
+
+        <div class="nav-links" id="nav-links">
+            <a href="#products">Products</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="about.html">About</a>
+            <a href="https://smart-home-lovat.vercel.app/" class="btn-portal">
+                <i class="fa-solid fa-gauge-high"></i> Customer Portal
+            </a>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+            <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-bolt"></i> Smart Home Technology
+            </div>
+            <h1>The Future of<br><span class="gradient-text">Smart Living</span></h1>
+            <p>Affordable, military-grade secure, and effortlessly intelligent home automation — designed for the modern
+                Indian home.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn-primary">
+                    <i class="fa-solid fa-shop"></i> Shop Now
+                </a>
+                <a href="https://smart-home-lovat.vercel.app/" class="btn-secondary">
+                    <i class="fa-solid fa-right-to-bracket"></i> Customer Login
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- ══════════ STATS ══════════ -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number" data-count="5000+">5000+</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-count="99.9%">99.9%</div>
+            <div class="stat-label">Uptime</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-count="40%">40%</div>
+            <div class="stat-label">Energy Saved</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support</div>
+        </div>
+    </div>
+
+    <!-- ══════════ PRODUCTS ══════════ -->
+    <section id="products" class="section">
+        <p class="section-label">Our Hardware</p>
+        <h2 class="section-title">Smart Solutions for Every Home</h2>
+        <p class="section-sub">Purpose-built devices that seamlessly blend into your home while delivering powerful
+            automation capabilities.</p>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-icon"><i class="fa-solid fa-server"></i></div>
+                <h3>Blinkdrop Hub</h3>
+                <p>The brain of your smart home. Connects all devices via secure MQTT protocol with end-to-end
+                    encryption and real-time control.</p>
+                <span class="product-tag">Core Controller</span>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon"><i class="fa-solid fa-toggle-on"></i></div>
+                <h3>Smart Switch Module</h3>
+                <p>Convert your existing switches into smart ones without any rewiring. Compatible with all standard
+                    Indian switchboards.</p>
+                <span class="product-tag">Plug & Play</span>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon"><i class="fa-solid fa-fan"></i></div>
+                <h3>Smart Fan Controller</h3>
+                <p>Full 4-speed fan control through your phone or Google Home. Schedule, automate, and monitor your fan
+                    energy usage.</p>
+                <span class="product-tag">Google Home Ready</span>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <h3>Energy Monitor</h3>
+                <p>Track real-time power consumption across all connected devices. Identify usage patterns and reduce
+                    your electricity bill.</p>
+                <span class="product-tag">Real-Time Data</span>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon"><i class="fa-solid fa-wifi"></i></div>
+                <h3>Wireless Sensor</h3>
+                <p>Battery-powered temperature, humidity, and motion sensors. No wiring required — just place them
+                    anywhere in your home.</p>
+                <span class="product-tag">Wireless</span>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>Blinkdrop App</h3>
+                <p>Control your entire home from anywhere with our intuitive app. Works offline with local MQTT directly
+                    on your home network.</p>
+                <span class="product-tag">iOS & Android</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ FEATURES ══════════ -->
+    <section id="features" class="section">
+        <p class="section-label">Why Blinkdrop</p>
+        <h2 class="section-title">Built Different. Built Better.</h2>
+        <p class="section-sub">Every feature is engineered to give you maximum control, security, and energy efficiency.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon blue"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="feature-body">
+                    <h3>Military-Grade Security</h3>
+                    <p>AES-256 encrypted MQTT communication, JWT-based authentication with token versioning, and secure
+                        WebSocket connections.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon cyan"><i class="fa-solid fa-bolt"></i></div>
+                <div class="feature-body">
+                    <h3>Real-Time Energy Monitoring</h3>
+                    <p>Track live power consumption for each device. Historical analytics and cost projections built
+                        right into the dashboard.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon purple"><i class="fa-brands fa-google"></i></div>
+                <div class="feature-body">
+                    <h3>Google Home Integration</h3>
+                    <p>Works natively with Google Home and Google Assistant. Control devices with voice commands
+                        instantly.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon green"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <div class="feature-body">
+                    <h3>Easy Installation</h3>
+                    <p>No electrician required for most devices. Our plug-and-play modules fit standard Indian
+                        switchboards out of the box.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon orange"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <div class="feature-body">
+                    <h3>Automation Schedules</h3>
+                    <p>Create smart schedules, timers, and routines. Automate your home based on time, occupancy, or
+                        energy thresholds.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon rose"><i class="fa-solid fa-wifi"></i></div>
+                <div class="feature-body">
+                    <h3>Works Without Internet</h3>
+                    <p>Local MQTT protocol ensures your devices work even if the internet goes down. Your home stays
+                        smart, always.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ HOW IT WORKS ══════════ -->
+    <section id="how-it-works" class="section">
+        <p class="section-label">Simple Setup</p>
+        <h2 class="section-title">Up and Running in Minutes</h2>
+        <p class="section-sub">From unboxing to full automation in four simple steps — no technical expertise needed.
+        </p>
+
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Order Your Kit</h3>
+                <p>Choose the devices that match your needs. We ship anywhere in India within 2–4 business days.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Install the Hardware</h3>
+                <p>Snap modules behind existing switches or plug into sockets. Detailed video guides included in the
+                    box.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Create Your Account</h3>
+                <p>Sign up on the Blinkdrop portal, connect your Blinkdrop Hub to Wi-Fi, and pair your devices.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Control Everything</h3>
+                <p>Use the app, Google Home, or your dashboard to control, automate, and monitor your entire home.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ TESTIMONIALS ══════════ -->
+    <section id="testimonials" class="section">
+        <p class="section-label">Real Users</p>
+        <h2 class="section-title">Loved by Homeowners Across India</h2>
+        <p class="section-sub">Don't take our word for it — here's what our customers say about living with Blinkdrop.
+        </p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Set up was shockingly easy. Within an hour, my entire flat's lighting was on Google Home.
+                    The energy monitor alone saves me ₹800 a month!"</blockquote>
+                <div class="testimonial-author">
+                    <div class="author-avatar avatar-blue">RK</div>
+                    <div class="author-info">
+                        <strong>Rahul K.</strong>
+                        <span>Bengaluru, Karnataka</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"I was skeptical about Indian smart home brands, but Blinkdrop changed everything.
+                    Rock-solid reliability and the app is beautiful. Highly recommend."</blockquote>
+                <div class="testimonial-author">
+                    <div class="author-avatar avatar-cyan">PS</div>
+                    <div class="author-info">
+                        <strong>Priya S.</strong>
+                        <span>Mumbai, Maharashtra</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"The offline-first MQTT design is genius. Even during ISP outages, all my devices keep
+                    working perfectly. That's proper engineering."</blockquote>
+                <div class="testimonial-author">
+                    <div class="author-avatar avatar-purple">AM</div>
+                    <div class="author-info">
+                        <strong>Arjun M.</strong>
+                        <span>Hyderabad, Telangana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ CTA BANNER ══════════ -->
+    <section class="cta-banner">
+        <h2>Ready to Transform Your Home?</h2>
+        <p>Join thousands of Indian homeowners already living smarter with Blinkdrop.</p>
+        <a href="https://smart-home-lovat.vercel.app/" class="btn-white">
+            <i class="fa-solid fa-right-to-bracket"></i> Access Your Dashboard
+        </a>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">BLINK<span>DROP</span></div>
+                <p>Affordable, secure, and seamless smart home automation. Making the future of living accessible to
+                    every Indian home.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#products">Blinkdrop Hub</a>
+                <a href="#products">Smart Switch</a>
+                <a href="#products">Fan Controller</a>
+                <a href="#products">Energy Monitor</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#testimonials">Reviews</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal & Support</h4>
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="https://smart-home-lovat.vercel.app/">Customer Portal</a>
+                <a href="mailto:support@blinkdrop.in">Contact Support</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 Blinkdrop Technologies Pvt. Ltd. All rights reserved.</span>
+            <div style="display:flex; gap:1.2rem;">
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+
+</html>
