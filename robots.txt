@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block internal/generated files
+Disallow: /google0c8014a5ba524441.html
+
+Sitemap: https://blinkdrop.in/sitemap.xml
