@@ -91,42 +91,6 @@
             line-height: 1.6;
             margin: 0;
         }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .team-card {
-            text-align: center;
-        }
-
-        .team-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: white;
-        }
-
-        .team-card h3 {
-            font-size: 0.97rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .team-card span {
-            font-size: 0.83rem;
-            color: var(--text-secondary);
-        }
     </style>
 </head>
 
@@ -138,8 +102,9 @@
             <a href="index.html#products">Products</a>
             <a href="index.html#features">Features</a>
             <a href="about.html">About</a>
-            <a href="https://smart-home-lovat.vercel.app/" class="btn-portal">
-                <i class="fa-solid fa-gauge-high"></i> Customer Portal
+            <a href="track.html">Track Order</a>
+            <a href="shop.html" class="btn-portal">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Smart Builder
             </a>
         </div>
         <div style="display:flex; align-items:center; gap:0.5rem;">
@@ -162,14 +127,14 @@
         <h2>Our Story</h2>
         <p>Blinkdrop was born out of a simple frustration: existing smart home systems were either too expensive, too
             complex, or simply not designed with Indian homes in mind. Our founder, an engineer who'd retrofitted his
-            own apartment with open-source smart switches, realized he could do this for everyone.</p>
+            own apartment with smart switches, realized he could do this for everyone.</p>
         <p>In 2024, we set out to build a smart home ecosystem that fits the reality of Indian electrical infrastructure
             — existing switchboards, variable power supply, diverse home layouts — without demanding any rewiring or
             professional setup. The result is Blinkdrop.</p>
         <p>Today, we serve thousands of homes across India, from compact Mumbai apartments to sprawling Bengaluru
-            villas. Our devices connect seamlessly with Google Home, operate locally over MQTT without needing the
-            cloud, and are engineered with the kind of security that protects your home data the way a physical lock
-            protects your front door.</p>
+            villas. Our devices connect seamlessly with Google Home, operate locally without needing the cloud, and are
+            engineered with military-grade security that protects your home data the way a physical lock protects your
+            front door.</p>
 
         <h2>Our Mission</h2>
         <p>To make intelligent home automation affordable, secure, and effortless for every Indian household — so the
@@ -180,8 +145,8 @@
             <div class="value-card">
                 <i class="fa-solid fa-shield-halved"></i>
                 <h3>Security First</h3>
-                <p>Every component is built with encryption, JWT auth, and local-first MQTT so your home data stays
-                    yours.</p>
+                <p>Every component is built with military-grade encryption and secure cloud sync, ensuring your home
+                    data stays yours — always.</p>
             </div>
             <div class="value-card">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
@@ -203,13 +168,15 @@
         </div>
 
         <h2>Our Technology</h2>
-        <p>Under the hood, Blinkdrop runs on a stack built for reliability and speed. Our backend API is built with
-            Node.js and Express, backed by MongoDB, and deployed on Render. The frontend dashboard is hosted on Vercel
-            for global CDN performance. Devices communicate in real time via the MQTT protocol — the same standard used
-            in industrial IoT systems worldwide.</p>
-        <p>Google Home integration is powered by the Google Smart Home Actions framework, with state reports sent
-            asynchronously to minimize latency. Our JWT-based authentication includes token versioning, enabling instant
-            remote logout across all devices — a feature rarely seen in consumer home automation products.</p>
+        <p>Under the hood, Blinkdrop runs on an enterprise-grade technology stack built for reliability, speed, and
+            scalability. Our infrastructure is deployed across multiple globally distributed cloud regions, ensuring
+            99.9% uptime and sub-second response times for all device commands.</p>
+        <p>All device communication is protected by military-grade encryption protocols, with secure cloud sync
+            keeping your devices responsive even across regions. Our authentication system features advanced session
+            management with instant remote logout across all devices — a feature rarely seen in consumer home
+            automation products.</p>
+        <p>Google Home integration enables seamless voice control with asynchronous state synchronization for minimal
+            latency. And with local-first connectivity, your devices work reliably even during internet outages.</p>
 
         <h2>Get in Touch</h2>
         <p>Have questions, partnership proposals, or bulk/enterprise inquiries? We'd love to hear from you.</p>
@@ -231,9 +198,9 @@
 
     <section class="cta-banner">
         <h2>Start Your Smart Home Journey</h2>
-        <p>Explore our products or log in to your existing dashboard.</p>
-        <a href="index.html#products" class="btn-white">
-            <i class="fa-solid fa-shop"></i> View Products
+        <p>Build your custom smart home kit or track an existing order.</p>
+        <a href="shop.html" class="btn-white">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Open Smart Builder
         </a>
     </section>
 

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — Blinkdrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description"
+        content="Blinkdrop Admin Dashboard — Manage orders, pricing, inventory, and service areas.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- ══════════ LOGIN OVERLAY ══════════ -->
+    <div class="login-overlay" id="login-overlay">
+        <div class="login-card">
+            <div class="login-logo">BLINK<span>DROP</span></div>
+            <div class="login-badge">ADMIN PORTAL</div>
+            <h2>Welcome Back</h2>
+            <p>Sign in to manage your Blinkdrop dashboard</p>
+            <form id="login-form" autocomplete="off">
+                <div class="login-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="Admin email" required autocomplete="email">
+                </div>
+                <div class="login-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="Password" required
+                        autocomplete="current-password">
+                </div>
+                <div class="login-error" id="login-error"></div>
+                <button type="submit" class="login-btn" id="login-btn">
+                    <i class="fa-solid fa-right-to-bracket"></i> Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ══════════ SIDEBAR ══════════ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="sidebar-logo">BLINK<span>DROP</span></div>
+            <div class="sidebar-badge">ADMIN</div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" data-tab="orders">
+                <i class="fa-solid fa-boxes-stacked"></i> Orders
+            </a>
+            <a href="#" class="sidebar-link" data-tab="pricing">
+                <i class="fa-solid fa-tags"></i> Pricing
+            </a>
+            <a href="#" class="sidebar-link" data-tab="inventory">
+                <i class="fa-solid fa-warehouse"></i> Inventory
+            </a>
+            <a href="#" class="sidebar-link" data-tab="pincodes">
+                <i class="fa-solid fa-map-pin"></i> Pincodes
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="#" class="sidebar-link" id="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+            <a href="index.html" class="sidebar-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Site
+            </a>
+        </div>
+    </aside>
+
+    <!-- ══════════ MOBILE TOP BAR ══════════ -->
+    <div class="admin-topbar" id="admin-topbar">
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="sidebar-logo" style="font-size:1.2rem;">BLINK<span>DROP</span> <span class="sidebar-badge"
+                style="font-size:0.6rem;">ADMIN</span></div>
+    </div>
+
+    <!-- ══════════ MAIN CONTENT ══════════ -->
+    <main class="admin-main" id="admin-main">
+
+        <!-- ══════════ STATS ROW ══════════ -->
+        <div class="stats-row" id="stats-row">
+            <div class="stat-card">
+                <div class="stat-card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <div>
+                    <div class="stat-card-value" id="stat-total-orders">0</div>
+                    <div class="stat-card-label">Total Orders</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon pending-icon"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                    <div class="stat-card-value" id="stat-pending">0</div>
+                    <div class="stat-card-label">Pending</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon completed-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                    <div class="stat-card-value" id="stat-completed">0</div>
+                    <div class="stat-card-label">Completed</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon revenue-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <div>
+                    <div class="stat-card-value" id="stat-revenue">₹0</div>
+                    <div class="stat-card-label">Total Revenue</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: ORDERS -->
+        <div class="admin-tab active" id="tab-orders">
+            <div class="tab-header">
+                <h2><i class="fa-solid fa-boxes-stacked"></i> Order Management</h2>
+            </div>
+            <div class="table-wrap">
+                <table class="admin-table" id="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody"></tbody>
+                </table>
+                <div class="no-data" id="no-orders" style="display:none;">
+                    <i class="fa-solid fa-inbox"></i>
+                    <p>No orders yet. Orders placed via the Smart Builder will appear here.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: PRICING -->
+        <div class="admin-tab" id="tab-pricing">
+            <div class="tab-header">
+                <h2><i class="fa-solid fa-tags"></i> Price Control</h2>
+                <p class="tab-desc">Update component prices. Changes apply immediately to the Smart Builder.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-card-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Device Base Price</h3>
+                    <p>Cost per Blinkdrop Hub unit</p>
+                    <div class="pricing-input-wrap">
+                        <span>₹</span>
+                        <input type="number" id="price-deviceBase" min="0" step="1">
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card-icon"><i class="fa-solid fa-toggle-on"></i></div>
+                    <h3>Per Appliance</h3>
+                    <p>Cost per smart appliance slot</p>
+                    <div class="pricing-input-wrap">
+                        <span>₹</span>
+                        <input type="number" id="price-perAppliance" min="0" step="1">
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                    <h3>Per Sensor</h3>
+                    <p>Cost per sensor module</p>
+                    <div class="pricing-input-wrap">
+                        <span>₹</span>
+                        <input type="number" id="price-perSensor" min="0" step="1">
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card-icon"><i class="fa-solid fa-fan"></i></div>
+                    <h3>Per Fan Controller</h3>
+                    <p>Cost per fan regulator module</p>
+                    <div class="pricing-input-wrap">
+                        <span>₹</span>
+                        <input type="number" id="price-perFan" min="0" step="1">
+                    </div>
+                </div>
+            </div>
+            <button class="neon-btn" id="save-prices-btn">
+                <i class="fa-solid fa-floppy-disk"></i> Save Prices
+            </button>
+            <div class="save-toast" id="price-toast">Prices updated successfully!</div>
+        </div>
+
+        <!-- TAB: INVENTORY -->
+        <div class="admin-tab" id="tab-inventory">
+            <div class="tab-header">
+                <h2><i class="fa-solid fa-warehouse"></i> Inventory Control</h2>
+                <p class="tab-desc">Toggle product availability.</p>
+            </div>
+            <div class="inventory-grid" id="inventory-grid"></div>
+        </div>
+
+        <!-- TAB: PINCODES -->
+        <div class="admin-tab" id="tab-pincodes">
+            <div class="tab-header">
+                <h2><i class="fa-solid fa-map-pin"></i> Serviceable Pincodes</h2>
+                <p class="tab-desc">Manage areas where Blinkdrop installation is available.</p>
+            </div>
+            <div class="pincode-add-wrap">
+                <div class="pincode-input-wrap" style="max-width:400px;">
+                    <i class="fa-solid fa-plus"></i>
+                    <input type="text" id="add-pincode-input" placeholder="Enter 6-digit pincode" maxlength="6"
+                        inputmode="numeric">
+                    <button class="neon-btn" id="add-pincode-btn" style="padding:0.6rem 1.5rem;">Add</button>
+                </div>
+            </div>
+            <div class="pincode-tags" id="pincode-tags"></div>
+        </div>
+
+    </main>
+
+    <!-- ══════════ ORDER DETAIL MODAL ══════════ -->
+    <div class="modal-overlay" id="order-modal" style="display:none;">
+        <div class="order-modal-card">
+            <button class="modal-close-btn" id="order-modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="order-modal-content">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

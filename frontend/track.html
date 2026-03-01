@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order — Blinkdrop</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description" content="Track your Blinkdrop smart home installation order status in real time.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="visitor.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">BLINK<span>DROP</span></a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html#products">Products</a>
+            <a href="index.html#features">Features</a>
+            <a href="about.html">About</a>
+            <a href="track.html">Track Order</a>
+            <a href="shop.html" class="btn-portal">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Smart Builder
+            </a>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ══════════ TRACK HERO ══════════ -->
+    <section class="shop-hero">
+        <div class="shop-hero-content">
+            <div class="hero-badge"><i class="fa-solid fa-truck-fast"></i> Real-Time Tracking</div>
+            <h1>Track Your <span class="gradient-text">Order</span></h1>
+            <p>Enter your phone number or email to check the status of your Blinkdrop installation.</p>
+        </div>
+    </section>
+
+    <!-- ══════════ TRACKER ══════════ -->
+    <section class="section">
+        <div class="shop-container" style="max-width:640px;">
+            <div class="pincode-checker">
+                <div class="pincode-input-wrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="track-input" placeholder="Phone number or email address" autocomplete="off">
+                    <button id="track-btn" class="btn-primary" style="padding:0.7rem 1.8rem; font-size:0.95rem;">
+                        <i class="fa-solid fa-search"></i> Track
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="track-results"></div>
+
+            <!-- Empty state -->
+            <div class="track-empty" id="track-empty">
+                <i class="fa-solid fa-box-open"></i>
+                <h3>No Order Found</h3>
+                <p>Enter the phone number or email you used during booking to find your order.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <h2>Don't Have an Order Yet?</h2>
+        <p>Build your custom smart home kit with our Smart Builder.</p>
+        <a href="shop.html" class="btn-white">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Open Smart Builder
+        </a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom" style="border-top:none; padding-top:2rem;">
+            <span>&copy; 2026 Blinkdrop Technologies Pvt. Ltd.</span>
+            <div style="display:flex; gap:1.2rem;">
+                <a href="index.html">Home</a>
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="track.js"></script>
+</body>
+
+</html>
