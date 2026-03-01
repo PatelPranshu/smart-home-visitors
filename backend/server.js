@@ -14,6 +14,10 @@ const Inventory = require('./models/Inventory');
 
 const app = express();
 
+// Enable 'trust proxy' so express-rate-limit can see the real client IP
+// behind proxies like Render or Cloudflare
+app.set('trust proxy', 1);
+
 // ── Security ──
 app.use(helmet());
 
