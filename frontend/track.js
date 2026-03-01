@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const API_BASE = 'http://localhost:5000/api';
+  const API_BASE = 'https://smart-home-visitors.onrender.com/api';
 
   const STATUSES = ['Order Received', 'Technician Assigned', 'Out for Installation', 'Completed'];
   const STATUS_ICONS = {

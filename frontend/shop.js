@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    const API_BASE = 'http://localhost:5000/api';
+    const API_BASE = 'https://smart-home-visitors.onrender.com/api';
     const MAX_APPLIANCES_PER_DEVICE = 8;
 
     // ── DOM References ──
