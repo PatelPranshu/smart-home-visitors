@@ -77,19 +77,39 @@
             return;
         }
 
-        if (availablePincodes.includes(pin)) {
-            validatedPincode = pin;
-            showPincodeResult(true, `<i class="fa-solid fa-circle-check"></i> Great news! Blinkdrop services are available in <strong>${pin}</strong>.`);
-            builderSection.style.display = 'block';
-            setTimeout(() => {
-                builderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 300);
-        } else {
-            validatedPincode = '';
-            showPincodeResult(false, `<i class="fa-solid fa-clock"></i> Coming soon to your area! We're expanding our services to <strong>${pin}</strong>. Stay tuned.`);
-            builderSection.style.display = 'none';
-            bookingSection.style.display = 'none';
-        }
+        checkServerStatus(
+            () => {
+                pincodeBtn.disabled = true;
+                pincodeBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Waking...';
+                showPincodeResult(true, `<div style="text-align:center; padding: 1rem;"><i class="fa-solid fa-server fa-bounce" style="font-size:2rem; color:var(--primary); margin-bottom:0.5rem; display:block;"></i>Searching...</div>`);
+            },
+            async () => {
+                pincodeBtn.disabled = true;
+                pincodeBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+
+                if (availablePincodes.length === 0) {
+                    await loadPincodes();
+                    await loadPrices();
+                }
+
+                pincodeBtn.disabled = false;
+                pincodeBtn.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i> Check';
+
+                if (availablePincodes.includes(pin)) {
+                    validatedPincode = pin;
+                    showPincodeResult(true, `<i class="fa-solid fa-circle-check"></i> Great news! Blinkdrop services are available in <strong>${pin}</strong>.`);
+                    builderSection.style.display = 'block';
+                    setTimeout(() => {
+                        builderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 300);
+                } else {
+                    validatedPincode = '';
+                    showPincodeResult(false, `<i class="fa-solid fa-clock"></i> Coming soon to your area! We're expanding our services to <strong>${pin}</strong>. Stay tuned.`);
+                    builderSection.style.display = 'none';
+                    bookingSection.style.display = 'none';
+                }
+            }
+        );
     }
 
     function showPincodeResult(success, msg) {

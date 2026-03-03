@@ -23,32 +23,51 @@
   trackBtn.addEventListener('click', searchOrder);
   trackInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') searchOrder(); });
 
-  async function searchOrder() {
+  function searchOrder() {
     const query = trackInput.value.trim().toLowerCase();
     if (!query) return;
 
-    trackBtn.disabled = true;
-    trackBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
-
-    try {
-      const res = await fetch(`${API_BASE}/orders/track?q=${encodeURIComponent(query)}`);
-      const orders = await res.json();
-
-      if (!res.ok || !Array.isArray(orders) || orders.length === 0) {
+    checkServerStatus(
+      // onLoading
+      () => {
+        trackBtn.disabled = true;
+        trackBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Waking...';
+        trackEmpty.style.display = 'none';
+        trackResults.innerHTML = `
+          <div style="text-align:center; padding: 3rem 1rem;">
+            <i class="fa-solid fa-server fa-bounce" style="font-size:2.5rem; color:var(--primary); margin-bottom:1rem;"></i>
+            <h3>Searching...</h3>
+            <p style="color:var(--text-secondary); margin-top:0.5rem;">This may take up to 50 seconds. Please wait.</p>
+          </div>
+        `;
+      },
+      // onReady
+      async () => {
+        trackBtn.disabled = true;
+        trackBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
         trackResults.innerHTML = '';
-        trackEmpty.style.display = 'block';
-        return;
-      }
 
-      trackEmpty.style.display = 'none';
-      trackResults.innerHTML = orders.map(order => renderOrder(order)).join('');
-    } catch (err) {
-      trackResults.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:2rem;">Unable to connect to server. Please try again later.</p>';
-      trackEmpty.style.display = 'none';
-    } finally {
-      trackBtn.disabled = false;
-      trackBtn.innerHTML = '<i class="fa-solid fa-search"></i> Track';
-    }
+        try {
+          const res = await fetch(`${API_BASE}/orders/track?q=${encodeURIComponent(query)}`);
+          const orders = await res.json();
+
+          if (!res.ok || !Array.isArray(orders) || orders.length === 0) {
+            trackResults.innerHTML = '';
+            trackEmpty.style.display = 'block';
+            return;
+          }
+
+          trackEmpty.style.display = 'none';
+          trackResults.innerHTML = orders.map(order => renderOrder(order)).join('');
+        } catch (err) {
+          trackResults.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:2rem;">Unable to connect to server. Please try again later.</p>';
+          trackEmpty.style.display = 'none';
+        } finally {
+          trackBtn.disabled = false;
+          trackBtn.innerHTML = '<i class="fa-solid fa-search"></i> Track';
+        }
+      }
+    );
   }
 
   function renderOrder(order) {
