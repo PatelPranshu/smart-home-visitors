@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    const API_BASE = 'https://smart-home-visitors.onrender.com/api';
+    // API_BASE is now provided globally by api.js
     const MAX_APPLIANCES_PER_DEVICE = 8;
 
     // ── DOM References ──

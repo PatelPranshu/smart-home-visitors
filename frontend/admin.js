@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    const API_BASE = 'https://smart-home-visitors.onrender.com/api';
+    // API_BASE is now provided globally by api.js
     const STATUSES = ['Order Received', 'Technician Assigned', 'Out for Installation', 'Completed'];
 
     let authToken = sessionStorage.getItem('bd_admin_token') || '';

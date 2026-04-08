@@ -3,7 +3,7 @@
  * Utility to check backend server health before making API calls.
  */
 
-const HEALTH_API_URL = 'https://smart-home-visitors.onrender.com/api/health';
+// HEALTH_API_URL is now provided globally by api.js
 
 /**
  * Checks if the backend server is awake and healthy.
